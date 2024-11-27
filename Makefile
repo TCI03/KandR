@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-Wall -I./include
+CFLAGS=-W -Wall -I./include
 
 MAIN=main.c
 BINDIR=./bin
