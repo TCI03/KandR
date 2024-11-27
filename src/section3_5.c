@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include <ctype.h>
 
 #include "section3_5.h"
@@ -39,7 +40,7 @@ void shellsortkr(int v[], int n)
     }
 }
 
-void reversekr(char s[])
+void reversekr2(char s[])
 {
     int c, i, j;
 

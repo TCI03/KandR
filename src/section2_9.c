@@ -22,6 +22,7 @@ unsigned invertkr(unsigned x, int p, int n)
 /* Exercise 2-8 */
 unsigned rightrotkr(unsigned x, int n)
 {
+  int rbit;
     while (n-- > 0) {
         rbit = (x & 1) << (wordlength() - 1);
         x = x >> 1;

@@ -162,7 +162,7 @@ int removel(char s[])
 
 /* Exercice 1-19 */
 
-void reversekr(void)
+void reversekr1(void)
 {
     char line[MAXLINE];
 

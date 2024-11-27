@@ -3,7 +3,7 @@
 
 int atoi2(char []);
 void shellsortkr(int [], int);
-void reversekr(char []);
+void reversekr2(char []);
 void expandkr(char [], char []);
 
 #endif

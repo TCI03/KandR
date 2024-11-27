@@ -21,7 +21,7 @@ void itoa(int n, char s[])
         s[i++] = '-';
     }
     s[i] = '\0';
-    reversekr(s);
+    reversekr2(s);
 }
 
 /* Exercice 3-4 */
@@ -39,7 +39,7 @@ void itoa2(int n, char s[])
         s[i++] = '-';
     }
     s[i] = '\0';
-    reversekr(s);
+    reversekr2(s);
 }
 
 /* Exercise 3-5 */
@@ -61,7 +61,7 @@ void itob(int n, char s[], int b)
         s[i++] = '-';
     }
     s[i] = '\0';
-    reversekr(s);
+    reversekr2(s);
 }
 
 /* Exercice 3-6 */
@@ -83,5 +83,5 @@ void itoa3(int n, char s[], int w)
         s[i++] = ' ';
     }
     s[i] = '\0';
-    reversekr(s);
+    reversekr2(s);
 }

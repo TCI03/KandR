@@ -9,7 +9,7 @@ int getl2(char [], int);
 void copy(char [], char []);
 int removebtbl(void);
 int removel(char []);
-void reversekr(void);
+void reversekr1(void);
 void reversel(char []);
 
 #endif
