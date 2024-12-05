@@ -1,6 +1,8 @@
 #include <ctype.h>
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h> /* for atof() */
+#include <string.h>
 
 #include "section4_3.h"
 
@@ -116,4 +118,97 @@ void ungetch(int c) /* push character back on input */
 		printf("ungetch: too many characters\n");
 	else
 		buf[bufp++] = c;
+}
+
+/* Exercise 4-3 */
+int revpolishcalc2(void)
+{
+	int type;
+	double op2;
+	char s[MAXOP];
+
+	while ((type = getop(s)) != EOF) {
+		switch (type) {
+		case NUMBER:
+			push(atof(s));
+			break;
+		case '+':
+			push(pop() + pop());
+			break;
+		case '*':
+			push(pop() * pop());
+			break;
+		case '-':
+			op2 = pop();
+			push(pop() - op2);
+			break;
+		case '/':
+			op2 = pop();
+			if (op2 != 0.0)
+				push(pop() / op2);
+			else
+				printf("error: zero divisor\n");
+			break;
+		case '%':
+			op2 = pop();
+			if (op2 != 0.0) {
+				push(fmod(pop(), op2));
+			}
+			else {
+				printf("error: zero divisor\n");
+			}
+		case '\n':
+			printf("\t%.8g\n", pop());
+			break;
+		default:
+			printf("error: unknown command %s\n", s);
+			break;
+		}
+	}
+	return 0;
+}
+
+int getop2(char s[])
+{
+	int i, c;
+
+	while ((s[0] = c = getch()) == ' ' || c == '\t')
+		;
+
+	s[1] = '\0';
+	i = 0;
+	if (!isdigit(c) && c != '.' && c != '-')
+		return c; /* not a number */
+
+	if (c == '-') {
+		if (isdigit(c = getch()) || c == '.') {
+			s[++i] = c;
+		}
+		else {
+			if (c != EOF) {
+				ungetch(c);
+			}
+			return '-';
+		}
+	}
+
+	if (isdigit(c)) {
+		while (isdigit(s[i++] = c = getch())) {
+			;
+		}
+	}
+
+	if (c == '.') {
+		while (isdigit(s[i++] = c = getch())) {
+			;
+		}
+	}
+
+	s[i] = '\0';
+
+	if (c != EOF) {
+		ungetch(c);
+	}
+
+	return NUMBER;
 }

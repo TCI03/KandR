@@ -7,5 +7,7 @@ double pop(void);
 int getop(char []);
 int getch(void);
 void ungetch(int);
+int revpolishcalc2(void);
+int getop2(char []);
 
 #endif
