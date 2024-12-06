@@ -9,5 +9,7 @@ int getch(void);
 void ungetch(int);
 int revpolishcalc2(void);
 int getop2(char []);
+int revpolishcalc3(void);
+void clear(void);
 
 #endif
