@@ -448,7 +448,7 @@ int revpolishcalc5(void)
 			break;
 		case '\n':
 			v = pop();
-			printf("\t%.8g\n", v());
+			printf("\t%.8g\n", v);
 			break;
 		default:
 			if (type >= 'A' && type <= 'Z') {
