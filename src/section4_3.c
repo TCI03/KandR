@@ -533,14 +533,14 @@ void ungetch3(int c)
 /* Exercise 4-10 */
 
 int li = 0;
-char line[MAXLINE];
+char line2[MAXLINE];
 
 int getop4(char s[])
 {
 	int c, i;
 
-	if (line[li] == '\0') {
-		if (getlinekr(line, MAXLINE) == 0) {
+	if (line2[li] == '\0') {
+		if (getlinekr(line2, MAXLINE) == 0) {
 			return EOF;
 		}
 		else {
@@ -548,7 +548,7 @@ int getop4(char s[])
 		}
 	}
 
-	while ((s[0] = c = line[li++]) == ' ' || c == '\t') {
+	while ((s[0] = c = line2[li++]) == ' ' || c == '\t') {
 		;
 	}
 
@@ -561,13 +561,13 @@ int getop4(char s[])
 	i = 0;
 
 	if (isdigit(c)) {
-		while (isdigit(s[++i] = c = line[li++])) {
+		while (isdigit(s[++i] = c = line2[li++])) {
 			;
 		}
 	}
 
 	if (c == '.') {
-		while (isdigit(s[++i] = c = line[li++])) {
+		while (isdigit(s[++i] = c = line2[li++])) {
 			;
 		}
 	}

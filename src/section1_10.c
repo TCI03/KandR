@@ -1,5 +1,6 @@
 /* External variables and scope */
 #include <stdio.h>
+
 #include "section1_10.h"
 
 #define MAXCOL 10
