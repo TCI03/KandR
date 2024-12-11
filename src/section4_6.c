@@ -4,6 +4,8 @@
 #include "section4_3.h"
 #include "section4_6.h"
 
+#define NUMBER '0'
+
 /* Exercice 4-11 */
 
 int getop5(char s[])
