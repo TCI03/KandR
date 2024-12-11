@@ -4,7 +4,7 @@
 #include "section4_3.h"
 #include "section5_2.h"
 
-void swap(int *px, int *py)
+void swap2(int *px, int *py)
 {
 	int temp;
 

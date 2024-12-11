@@ -1,5 +1,6 @@
 #include <math.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 #include "section4_10.h"
@@ -23,18 +24,18 @@ void qsortkr(int v[], int left, int right)
 	int i, last;
 	if (left >= right) /* do nothing if array contains */
 		return; /* fewer than two elements */
-	swap(v, left, (left + right)/2); /* move partition elem */
+	swap1(v, left, (left + right)/2); /* move partition elem */
 	last = left; /* to v[0] */
 	for (i = left + 1; i <= right; i++) /* partition */
 		if (v[i] < v[left])
-			swap(v, ++last, i);
-	swap(v, left, last); /* restore partition elem */
+			swap1(v, ++last, i);
+	swap1(v, left, last); /* restore partition elem */
 	qsortkr(v, left, last-1);
 	qsortkr(v, last+1, right);
 }
 
 /* swap: interchange v[i] and v[j] */
-void swap(int v[], int i, int j)
+void swap1(int v[], int i, int j)
 {
 	int temp;
 	temp = v[i];

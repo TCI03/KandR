@@ -2,25 +2,25 @@
 
 #include "section2_9.h"
 
-unsigned getbitskr(unsigned x, int p, int n)
+unsigned getbitskr(unsigned x, int p, unsigned int n)
 {
     return (x >> (p + 1 - n)) & ~(~0 << n);
 }
 
 /* Exercise 2-6 */
-unsigned setbitskr(unsigned x, int p, int n, unsigned y)
+unsigned setbitskr(unsigned x, int p, unsigned int n, unsigned y)
 {
-    return x & ~(~(~0 << n) << (p + 1 - n)) | (y & ~(~0 << n)) << (p + 1 - n);
+    return (x & ~(~(~0 << n) << (p + 1 - n))) | (y & ~(~0 << n)) << (p + 1 - n);
 }
 
 /* Exercise 2-7 */
-unsigned invertkr(unsigned x, int p, int n)
+unsigned invertkr(unsigned x, int p, unsigned int n)
 {
     return x ^ ~((~0 << n) << (p + 1 - n)) ;
 }
 
 /* Exercise 2-8 */
-unsigned rightrotkr(unsigned x, int n)
+unsigned rightrotkr(unsigned x, unsigned int n)
 {
   int rbit;
     while (n-- > 0) {
