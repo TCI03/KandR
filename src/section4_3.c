@@ -4,6 +4,7 @@
 #include <stdlib.h> /* for atof() */
 #include <string.h>
 
+#include "section4_1.h"
 #include "section4_3.h"
 
 #define BUFSIZE 100
@@ -539,7 +540,7 @@ int getop4(char s[])
 	int c, i;
 
 	if (line[li] == '\0') {
-		if (getline(line, MAXLINE) == 0) {
+		if (getlinekr(line, MAXLINE) == 0) {
 			return EOF;
 		}
 		else {
